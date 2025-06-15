@@ -1,0 +1,24 @@
+name: Node Lint
+run-name: Lint nodejs App
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: [self-hosted]
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+
+      - name: Instalar dependencias
+        working-directory: ./calculadora
+        run: npm install
+
+      - name: Ejecutar Linter
+        working-directory: ./calculadora
+        run: npm run lint
