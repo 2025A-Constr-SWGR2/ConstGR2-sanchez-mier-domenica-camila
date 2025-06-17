@@ -1,0 +1,3 @@
+[submodule "pharmacyInventory"]
+	path = pharmacyInventory
+	url = https://github.com/DomenicaSanchez/pharmacyInventory.git
